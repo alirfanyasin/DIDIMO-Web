@@ -1,6 +1,6 @@
 # DIDIMO WEBSITE
 
-# Usage
+## Usage
 Setelah di clone repositorynya silahkan tulis perintah dibawah ini
 ```sh
 composer install
@@ -20,7 +20,7 @@ Setelah itu lakukan generate key
 php artisan key:generate
 ```
 
-# Running Project
+## Running Project
 ```sh
 php artisan serve
 ```

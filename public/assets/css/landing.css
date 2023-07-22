@@ -165,7 +165,7 @@ footer li a {
 }
 
 footer li a:hover {
-  color: red;
+  color: var(--primary-color);
 }
 
 footer ul {

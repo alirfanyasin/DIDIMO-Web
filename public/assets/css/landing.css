@@ -111,3 +111,8 @@ body {
   height: 100%;
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
+
+#artikel-section .row .col-md-3 a .card{
+  height: 400px;
+  display: block;
+}

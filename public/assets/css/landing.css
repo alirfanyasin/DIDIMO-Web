@@ -1,0 +1,84 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Root */
+:root {
+  /* Color Base */
+  --white : #FFFFFF;
+  --black : #000000;
+
+  /* Color Theme */
+  --bg-color : #F7F7F7;
+  --primary-color : #C80005;
+  --text-color :#505050;
+
+}
+
+/* Custom Style */
+.navbar-nav .nav-link.active, .text-main {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.bg-main {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+
+/* Hover */
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.btn.btn-primary:hover {
+  background-color: #a40003;
+  color: var(--white);
+}
+
+
+
+.btn-hero:hover span {
+  background: #000;
+  transition: .5s;
+  transform: translate(20px, 0);
+}
+
+
+
+/* Main Style */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+  background: var(--bg-color);
+}
+
+
+#jumbotron-section h1 {
+  font-size: 50pt;
+}
+
+#jumbotron-section .col-md-6:nth-child(1) a span{
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+}
+
+
+
+
+#jumbotron-section .col-md-6:nth-child(2) div img{
+  position: absolute;
+  z-index: -99;
+  height: 100vh;
+  right: 0;
+}

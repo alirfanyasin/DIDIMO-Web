@@ -116,3 +116,58 @@ body {
   height: 400px;
   display: block;
 }
+
+
+.testimonial-section {
+  display: flex;
+  overflow: hidden;
+  animation: slideRightLeft 30s linear infinite;
+}
+
+.testimonial-card {
+  min-width: 300px;
+  max-width: 500px;
+  /* Atur lebar sesuai kebutuhan */
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@keyframes slideRightLeft {
+  0% {
+      transform: translateX(0);
+  }
+
+  25% {
+      transform: translateX(-100%);
+  }
+
+  50% {
+      transform: translateX(0);
+  }
+  75% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+        
+}
+
+
+footer li {
+  list-style: none;
+
+}
+
+footer li a {
+  color: gray
+}
+
+footer li a:hover {
+  color: red;
+}
+
+footer ul {
+  padding: 0;
+}

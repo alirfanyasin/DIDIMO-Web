@@ -100,7 +100,7 @@
     </section>
 
 
-    <section id="artikel-section" class="container my-5 py-5">
+    <section id="artikel-section" class="container py-5" style="margin-top: 200px">
         <header class="mb-5 text-center">
             <h2 class="text-main fw-semibold">Artikel</h2>
             <h4 class="fw-semibold">Rekomendasi artikel untuk <br>pola hidup sehat</h4>
@@ -186,6 +186,131 @@
         </div>
     </section>
 
+
+
+    <section id="testimonial-section" class="container" style="margin-top: 200px;  margin-bottom:100px;">
+        <header class="mb-5 text-center">
+            <h2 class="text-main fw-semibold">Testimonial</h2>
+            <h4 class="fw-semibold">Apa kata mereka tentang DIDIMO?</h4>
+        </header>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
+                    <q style="margin-bottom: 70px">
+                        Dengan adanya didimo mengecek kesehatan lebih mudah dan lebih fleksibel
+                    </q>
+                    <div class="profile d-flex align-items-center mt-4 position-absolute" style="bottom: 20px;">
+                        <div class="mt-3 d-flex align-items-center">
+                            <img src="{{ asset('assets/img/user-photo.png') }}" alt="" width="40px"
+                                height="40px" class="bg-warning rounded-pill">
+                            <div class="mx-3">
+                                <small class="d-block">Username</small>
+                                <small class="text-secondary">Pasien</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
+                    <q style="margin-bottom: 70px">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident quibusdam dolorum eveniet quasi
+                        blanditiis eius possimus, similique vitae consequatur aliquam commodi alias laboriosam accusamus
+                        magnam.
+                    </q>
+                    <div class="profile d-flex align-items-center mt-4 position-absolute" style="bottom: 20px;">
+                        <div class="mt-3 d-flex align-items-center">
+                            <img src="{{ asset('assets/img/user-photo.png') }}" alt="" width="40px"
+                                height="40px" class="bg-warning rounded-pill">
+                            <div class="mx-3">
+                                <small class="d-block">Username</small>
+                                <small class="text-secondary">Pasien</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
+                    <q style="margin-bottom: 70px">
+                        Lorem ipsum dolor sit amet consectetur. Dolorum quae consequuntur et aliquam
+                        asperiores, odio maiores perspiciatis id velit autem?
+                    </q>
+                    <div class="profile d-flex align-items-center mt-4 position-absolute" style="bottom: 20px;">
+                        <div class="mt-3 d-flex align-items-center">
+                            <img src="{{ asset('assets/img/user-photo.png') }}" alt="" width="40px"
+                                height="40px" class="bg-warning rounded-pill">
+                            <div class="mx-3">
+                                <small class="d-block">Username</small>
+                                <small class="text-secondary">Pasien</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
+                    <q style="margin-bottom: 70px">
+                        Lorem ipsum dolor sit amet consectetur. Dolorum quae consequuntur et aliquam
+                        asperiores, odio maiores perspiciatis id velit autem?
+                    </q>
+                    <div class="profile d-flex align-items-center mt-4 position-absolute" style="bottom: 20px;">
+                        <div class="mt-3 d-flex align-items-center">
+                            <img src="{{ asset('assets/img/user-photo.png') }}" alt="" width="40px"
+                                height="40px" class="bg-warning rounded-pill">
+                            <div class="mx-3">
+                                <small class="d-block">Username</small>
+                                <small class="text-secondary">Pasien</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="bg-white mt-5 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ asset('assets/img/logo-secondary.png') }}" alt="" class="mt-4"
+                        width="250px">
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-semibold text-main">INFORMASI</h5>
+                    <ul>
+                        <li><a href="" class="text-decoration-none list-none">Beranda</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Tentang Kami</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Layanan</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Artikel</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Testimonial</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-semibold text-main">SUPPORT</h5>
+                    <ul>
+                        <li><a href="" class="text-decoration-none list-none">FAQ</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-semibold text-main">SOSIAL MEDIA</h5>
+                    <ul>
+                        <li><a href="" class="text-decoration-none list-none">Instagram</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Twitter</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Facebook</a></li>
+                        <li><a href="" class="text-decoration-none list-none">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 @endsection

@@ -45,7 +45,11 @@
 
 
 
-    <section id="layanan-section" class="bg-white my-5 py-4">
+    <section id="layanan-section" class="bg-white my-5 py-5">
+        <div class="bg-bubble-blur">
+            <img src="{{ asset('assets/img/bg-1.png') }}" width="500px" alt="">
+            <img src="{{ asset('assets/img/bg-2.png') }}" width="500px" alt="">
+        </div>
         <div class="container">
             <div class="row ">
                 <header class="mb-5 text-center my-4">
@@ -60,7 +64,8 @@
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">Rekomendasi Makanan</h5>
-                            <p class="card-text">Berawal dari makanan yang sehat maka tubuh juga akan ikut sehat.</p>
+                            <p class="card-text text-secondary">Berawal dari makanan yang sehat maka tubuh juga akan ikut
+                                sehat.</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +77,8 @@
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">Konsultasi Kesehatan</h5>
-                            <p class="card-text">Layanan konsultasi kesehatan secara gratis kepada siapapun.</p>
+                            <p class="card-text text-secondary">Layanan konsultasi kesehatan secara gratis kepada siapapun.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -84,11 +90,60 @@
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">Rekap Pemeriksaan</h5>
-                            <p class="card-text">Merekap hasil pemeriksaan yang telah di lakukan secara berkala.</p>
+                            <p class="card-text text-secondary">Merekap hasil pemeriksaan yang telah di lakukan secara
+                                berkala.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <section id="artikel-section" class="container my-5 py-5">
+        <div class="row">
+            <header class="mb-5 text-center">
+                <h2 class="text-main fw-semibold">Artikel</h2>
+                <h4 class="fw-semibold">Rekomendasi artikel untuk <br>pola hidup sehat</h4>
+            </header>
+            <div class="col-md-3">
+                <div class="card rounded-4 position-relative overflow-hidden h-100">
+                    <div class="grading-upgraound"></div>
+                    <img src="{{ asset('assets/img/img-6.jpg') }}" class="card-img-top rounded-4" alt="...">
+                    <div class="card-title position-absolute m-4" style="bottom: 0">
+                        <div class="text-white">Menghindari makanan manis dengan hal-hal berikut . . .</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card rounded-4 position-relative overflow-hidden h-100">
+                    <div class="grading-upgraound"></div>
+                    <img src="{{ asset('assets/img/img-7.jpg') }}" class="card-img-top rounded-4" alt="...">
+                    <div class="card-title position-absolute m-4" style="bottom: 0">
+                        <div class="text-white">Makanan makanan yang manis tapi sehat untuk di konsumsi . . .</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card rounded-4 position-relative overflow-hidden h-100">
+                    <div class="grading-upgraound"></div>
+                    <img src="{{ asset('assets/img/img-8.jpeg') }}" class="card-img-top rounded-4" alt="...">
+                    <div class="card-title position-absolute m-4" style="bottom: 0">
+                        <div class="text-white">Menghindari makanan manis dengan hal-hal berikut . . .</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card rounded-4 position-relative overflow-hidden h-100">
+                    <div class="grading-upgraound"></div>
+                    <img src="{{ asset('assets/img/img-9.jpeg') }}" class="card-img-top rounded-4" alt="...">
+                    <div class="card-title position-absolute m-4" style="bottom: 0">
+                        <div class="text-white">Menghindari makanan manis dengan hal-hal berikut . . .</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 @endsection

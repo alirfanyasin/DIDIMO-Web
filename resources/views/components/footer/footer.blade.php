@@ -22,6 +22,15 @@
                 </ul>
             </div>
             <div class="col-md-2">
+                <h5 class="fw-semibold text-main">FITUR</h5>
+                <ul>
+                    <li><a href="" class="text-decoration-none list-none">Cek Gula Darah</a></li>
+                    <li><a href="" class="text-decoration-none list-none">Monitoring Hasil Cek</a></li>
+                    <li><a href="" class="text-decoration-none list-none">Konsultasi</a></li>
+                    <li><a href="" class="text-decoration-none list-none"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
                 <h5 class="fw-semibold text-main">SOSIAL MEDIA</h5>
                 <ul>
                     <li><a href="" class="text-decoration-none list-none">Instagram</a></li>
@@ -29,6 +38,14 @@
                     <li><a href="" class="text-decoration-none list-none">Facebook</a></li>
                     <li><a href="" class="text-decoration-none list-none">Youtube</a></li>
                 </ul>
+            </div>
+
+        </div>
+
+        <div class="row mt-5 text-center">
+            <div class="col">
+                <small> Copyright © 2023 <span class="text-secondary">Made with ❤️ DIDIMO Team</span>. All rights
+                    reserved.</small>
             </div>
         </div>
     </div>

@@ -102,7 +102,7 @@ body {
 }
 
 #artikel-section {
-  margin-top: 500px;
+  margin-top: 100px;
 }
 
 #artikel-section .grading-upgraound {
@@ -114,44 +114,22 @@ body {
 
 #artikel-section .row .col-md-3 a .card{
   height: 400px;
-  display: block;
+}
+
+#artikel-section .row .col-md-3 .card:hover img {
+  transition: 0.3s;
+  transform: scale(1.2);
 }
 
 
-.testimonial-section {
-  display: flex;
-  overflow: hidden;
-  animation: slideRightLeft 30s linear infinite;
+#testimonial-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.testimonial-card {
-  min-width: 300px;
-  max-width: 500px;
-  /* Atur lebar sesuai kebutuhan */
-  margin: 10px;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-@keyframes slideRightLeft {
-  0% {
-      transform: translateX(0);
-  }
-
-  25% {
-      transform: translateX(-100%);
-  }
-
-  50% {
-      transform: translateX(0);
-  }
-  75% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(0);
-  }
-        
+#testimonial-section .row .card:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
 }
 
 
@@ -170,4 +148,55 @@ footer li a:hover {
 
 footer ul {
   padding: 0;
+}
+
+
+
+
+/* Responsive Mobile Version */
+@media only screen and (max-width: 600px) {
+  /* * {
+    border: 1px solid blue;
+  } */
+  #jumbotron-section h1 {
+    font-size: 30pt;
+    margin-top: 20px;
+  }
+
+  #jumbotron-section p {
+    margin-top: 0px;
+  }
+
+  #jumbotron-section .row .col-md-6:nth-child(1) {
+    order: 2;
+  }
+
+  #jumbotron-section .btn-hero {
+    display: flex;
+    justify-content: center;
+  }
+
+  #tentang-kami-section .row .col-md-6:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  #layanan-section {
+    margin-top: 100px;
+  }
+
+  
+  #artikel-section .row .col-md-3 a .card{
+    height: 350px;
+  }
+
+  footer .row .col-md-4 {
+    display: flex;
+    justify-content: center;
+ }
+  
+  footer .row .col-md-2.col-6 {
+     margin-top: 50px;
+  }
+  
 }

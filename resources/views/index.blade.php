@@ -7,10 +7,12 @@
         <div class="row d-flex align-items-center">
             <div class="col-md-6">
                 <h1 class="fw-bold">Kontrol <span class="text-main">Gula <br> Darah</span> Semakin <br> Mudah</h1>
-                <p class="mt-5">Bersama, kita bisa menciptakan masa depan yang lebih baik dan bebas dari risiko kesehatan.
+                <p class="mt-lg-5">Bersama, kita bisa menciptakan masa depan yang lebih baik dan bebas dari risiko kesehatan.
                     Mari mulai hari ini untuk hidup lebih sehat.</p>
 
-                <x-button.secondary>Lakukan Pengecekan</x-button.secondary>
+                <div class="btn-hero">
+                    <x-button.secondary>Lakukan Pengecekan</x-button.secondary>
+                </div>
 
             </div>
 
@@ -33,19 +35,21 @@
                 </header>
 
                 <p>Kami dengan bangga mempersembahkan solusi inovatif untuk memantau kesehatan Anda dengan cepat, mudah, dan
-                    akurat. Di sini, misi kami adalah memberdayakan Anda untuk mengambil kendali penuh atas kesehatan Anda,
+                    akurat. Memanfaatkan teknologi Internet of Things (IoT) sebagai alat untuk mengecek gula darah Anda
+                    tanpa melukai kulit sama sekali. Di sini, misi kami adalah memberdayakan Anda untuk mengambil kendali
+                    penuh atas kesehatan Anda,
                     khususnya terkait kadar gula darah Anda.</p>
                 <p>Mengapa memilih Pusat Pengecekan Gula Darah? Kami memiliki berbagai alasan yang akan membuat Anda percaya
                     bahwa Anda berada di tempat yang tepat untuk memenuhi kebutuhan pengecekan gula darah Anda yaitu
-                    Teknologi Canggih, Keamanan dan Privasi, Aksesibilitas, Kolaborasi dengan Profesional Kesehatan Edukasi
-                    dan Pemahaman.</p>
+                    Teknologi Canggih, Keamanan dan Privasi, Aksesibilitas, Kolaborasi dengan Profesional Kesehatan, Edukasi
+                    dan Pemahaman Tentang Kesehatan.</p>
             </div>
         </div>
     </section>
 
 
 
-    <section id="layanan-section" class="bg-white my-5 py-5">
+    <section id="layanan-section" class="bg-white py-5">
         <div class="bg-bubble-blur">
             <img src="{{ asset('assets/img/bg-1.png') }}" width="500px" alt="">
             <img src="{{ asset('assets/img/bg-2.png') }}" width="500px" alt="">
@@ -100,7 +104,7 @@
     </section>
 
 
-    <section id="artikel-section" class="container py-5" style="margin-top: 200px">
+    <section id="artikel-section" class="container py-5">
         <header class="mb-5 text-center">
             <h2 class="text-main fw-semibold">Artikel</h2>
             <h4 class="fw-semibold">Rekomendasi artikel untuk <br>pola hidup sehat</h4>
@@ -184,17 +188,23 @@
                 </a>
             </div>
         </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="" class="btn btn-primary border-0 ">Lihat Selengkapnya</a>
+            </div>
+        </div>
     </section>
 
 
 
-    <section id="testimonial-section" class="container" style="margin-top: 200px;  margin-bottom:100px;">
+    <section id="testimonial-section" class="container">
         <header class="mb-5 text-center">
             <h2 class="text-main fw-semibold">Testimonial</h2>
             <h4 class="fw-semibold">Apa kata mereka tentang DIDIMO?</h4>
         </header>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
                     <q style="margin-bottom: 70px">
                         Dengan adanya didimo mengecek kesehatan lebih mudah dan lebih fleksibel
@@ -212,7 +222,7 @@
 
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
                     <q style="margin-bottom: 70px">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident quibusdam dolorum eveniet quasi
@@ -232,7 +242,7 @@
 
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
                     <q style="margin-bottom: 70px">
                         Lorem ipsum dolor sit amet consectetur. Dolorum quae consequuntur et aliquam
@@ -251,7 +261,7 @@
 
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow p-4 rounded-4 h-100 position-relative">
                     <q style="margin-bottom: 70px">
                         Lorem ipsum dolor sit amet consectetur. Dolorum quae consequuntur et aliquam

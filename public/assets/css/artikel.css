@@ -1,0 +1,57 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Root */
+:root {
+  /* Color Base */
+  --white : #FFFFFF;
+  --black : #000000;
+
+  /* Color Theme */
+  --bg-color : #F7F7F7;
+  --primary-color : #C80005;
+  --text-color :#505050;
+
+}
+
+
+.grading-upground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+
+.background-primary {
+  width: 100%;
+  height: 500px;
+  background-image: url('../img/bg-artikel-header-2.jpg');
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-size: cover;
+}
+
+.background-primary .row .col header {
+  position: absolute;
+  bottom: 100px;
+}
+
+/* .background-primary .row .col {
+  display: flex;
+  align-items: center;
+  height: 100%; 
+} */
+
+#artikel-section .row .col-md-4 a .card{
+  height: 400px;
+
+}
+
+#artikel-section .row .col-md-4 .card:hover img {
+  transition: 0.3s;
+  transform: scale(1.2);
+}
+
+
+

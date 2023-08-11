@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\DashboardController;
@@ -21,6 +22,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route Landing Page
 Route::get('/', [LandingController::class, 'index']);
+Route::get('/artikel', [ArtikelController::class, 'index']);
 
 
 // Route Auth

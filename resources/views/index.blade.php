@@ -191,7 +191,7 @@
 
         <div class="row mt-5">
             <div class="col text-center">
-                <a href="" class="btn btn-primary border-0 ">Lihat Selengkapnya</a>
+                <a href="/artikel" class="btn btn-primary border-0 ">Lihat Selengkapnya</a>
             </div>
         </div>
     </section>

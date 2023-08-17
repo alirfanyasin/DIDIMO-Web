@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="/">
             <img src="{{ asset('assets/img/logo-secondary.png') }}" width="120px" alt="logo-didimo" class="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -16,7 +16,7 @@
                 <a class="nav-link mx-2 {{ Request::is('artikel') ? 'active' : '' }}"
                     href="#artikel-section">Artikel</a>
                 <a class="nav-link mx-2" href="#testimonial-section">Testimonial</a>
-                <a class="nav-link mx-2 btn btn-primary px-3" href="#">Masuk</a>
+                <a class="nav-link mx-2 btn btn-primary px-3" href="{{ route('login') }}">Masuk</a>
             </div>
         </div>
     </div>

@@ -20,6 +20,8 @@
     {{-- CSS Landing Page --}}
     <link rel="stylesheet" href="/assets/css/landing.css" />
     <link rel="stylesheet" href="/assets/css/artikel.css" />
+    <link rel="stylesheet" href="/assets/css/auth.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard.css" />
 </head>
 
 <body>

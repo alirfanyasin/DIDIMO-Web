@@ -32,10 +32,24 @@
 #login-left {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    width: 100%;
 }
 
 #headerText {
     font-size: 64px;
+}
+
+@media only screen and (max-width: 668px){
+    #headerText {
+        font-size: 34px;
+    }
+
+    #login-page .row > .col-md-6:nth-child(2){
+        display: none;
+    }
+
+
 }
 
 a {
@@ -45,6 +59,11 @@ a {
 
 .button-main {
     background-color: var(--primary-color);
+}
+
+
+.button-main:hover {
+    background-color: #a20003;
 }
 
 .border-main {

@@ -191,7 +191,7 @@
 
         <div class="row mt-5">
             <div class="col text-center">
-                <a href="/artikel" class="btn btn-primary border-0 ">Lihat Selengkapnya</a>
+                <a href="{{ route('artikel') }}" class="btn btn-primary border-0 ">Lihat Selengkapnya</a>
             </div>
         </div>
     </section>

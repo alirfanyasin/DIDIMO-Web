@@ -10,7 +10,7 @@
                 <div class="col d-flex">
                     <header class="align-items-center">
                         <h1 class="text-white">Artikel</h1>
-                        <p class="text-white">Rekomendasi makanan dan cara hidup sehat</p>
+                        <p class="text-white">Rekomendasi makanan dan pola hidup sehat</p>
                     </header>
                 </div>
             </div>
@@ -98,4 +98,6 @@
             </div>
         </div>
     </section>
+
+    <x-footer.footer />
 @endsection

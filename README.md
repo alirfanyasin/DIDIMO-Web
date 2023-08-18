@@ -29,3 +29,11 @@ jika ingin menjalan kan vitenya
 ```sh
 npm run dev
 ```
+
+## Usage
+Demo akun
+Email    : admin@didimo.test
+Password : password
+
+Email    : user@didimo.test
+Password : password

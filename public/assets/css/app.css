@@ -1,0 +1,72 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    /* Color Base */
+    --white: #ffffff;
+    --black: #000000;
+
+    /* Color Theme */
+    --bg-color: #f7f7f7;
+    --primary-color: #c80005;
+    --text-color: #505050;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+body {
+    background: var(--bg-color);
+}
+
+/* Custom Style */
+.navbar-nav .nav-link.active, .text-main {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.bg-main {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+
+/* Hover */
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.btn.btn-primary:hover {
+  background-color: #a40003;
+  color: var(--white);
+}
+
+
+
+.btn-hero:hover span {
+  background: #000;
+  transition: .5s;
+  transform: translate(20px, 0);
+}
+
+.text-main {
+    color: var(--primary-color);
+}
+
+
+
+#dashboard {
+  background: var(--bg-color);
+}
+
+#text-green {
+ color: #00bb40;
+}
+

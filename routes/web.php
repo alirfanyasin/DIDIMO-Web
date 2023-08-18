@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\KonsultasiController as AdminKonsultasiController;
+use App\Http\Controllers\Admin\PasienController as AdminPasienController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -39,11 +43,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route Dashboard 
 Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::prefix('app/admin')->name('app.admin')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/admin', function () {
-            return "<h1>Ini halaman admin</h1>";
-        });
+    Route::prefix('app/admin')->group(function () {
+        Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+        Route::get('/pasien', [AdminPasienController::class, 'index']);
+        Route::get('/artikel', [AdminArtikelController::class, 'index']);
+        Route::get('/konsultasi', [AdminKonsultasiController::class, 'index']);
     });
 });
 

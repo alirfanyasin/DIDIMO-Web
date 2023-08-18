@@ -26,12 +26,14 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="me-auto"></div>
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link mx-2 {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
-                    <a class="nav-link mx-2" href="#tentang-kami-section">Tentang Kami</a>
-                    <a class="nav-link mx-2" href="#layanan-section">Layanan</a>
-                    <a class="nav-link mx-2 {{ Request::is('artikel') ? 'active' : '' }}"
-                        href="#artikel-section">Artikel</a>
-                    <a class="nav-link mx-2" href="#testimonial-section">Testimonial</a>
+                    <a class="nav-link mx-2 {{ Request::is('app/admin/dashboard') ? 'active' : '' }}"
+                        href="/app/admin/dashboard">Dashboard</a>
+                    <a class="nav-link mx-2 {{ Request::is('app/admin/pasien') ? 'active' : '' }}"
+                        href="/app/admin/pasien">Pasien</a>
+                    <a class="nav-link mx-2 {{ Request::is('app/admin/artikel') ? 'active' : '' }}"
+                        href="/app/admin/artikel">Artikel</a>
+                    <a class="nav-link mx-2 {{ Request::is('app/admin/konsultasi') ? 'active' : '' }}"
+                        href="/app/admin/konsultasi">Konsultasi</a>
                     <form action="{{ route('logout') }}" method="POST" class="d-inline">
                         @csrf
                         <button type="submit" class="nav-link mx-2 btn btn-primary px-3">Keluar</button>

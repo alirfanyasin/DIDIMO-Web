@@ -4,7 +4,8 @@
 @section('content')
     <section class="container h-100 " id="dashboard">
         <div class="row mt-5 mb-4">
-            <h2 class="text-center fw-semibold">Halo, Irfan Yasin<br>Selamat Datang di <span class="text-main">DIDIMO</span>
+            <h2 class="text-center fw-semibold">Halo, {{ auth()->user()->name }} <br>Selamat Datang di <span
+                    class="text-main">DIDIMO</span>
             </h2>
         </div>
         <div class="row justify-content-center">

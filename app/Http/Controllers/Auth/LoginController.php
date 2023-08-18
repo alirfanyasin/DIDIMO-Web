@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -12,24 +13,39 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+
+
     function login(Request $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required'
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ], [
-            'username.required' => 'Username wajib diisi',
+            'email.required' => 'Email wajib diisi',
             'password.required' => 'Password wajib diisi'
         ]);
 
-        $infologin = [
-            'username' => $request->username,
-            'password' => $request->password
-        ];
-        if (Auth::attempt($infologin)) {
-            return 'sukses';
-        } else {
-            return 'gagal';
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            if (Auth::user()->hasRole('admin')) {
+                return redirect()->intended('app/admin/dashboard');
+            }
+            if (Auth::user()->hasRole('user')) {
+                return redirect()->intended('app/dashboard');
+            }
         }
+
+        return back()->withErrors(['message' => 'Email atau Password Anda salah!']);
+    }
+
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }

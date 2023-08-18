@@ -10,19 +10,49 @@
                     <h1 class="fw-bold mx-5 mt-2 text-center" id="headerText"><span class="text-main">Selamat</span>
                         Datang</h1>
 
-                    <form action="" class="row d-flex justify-content-center mt-5">
+                    <form action="{{ route('register') }}" method="POST" class="row d-flex justify-content-center mt-5">
+                        @csrf
                         <div class="col-md-8">
-                            <label for="name" class="form-label fw-semibold">Nama Lengkap</label>
-                            <input type="email" class="border-main rounded-3 form-control" id="name"
-                                placeholder="Masukkan Email">
-                            <label for="loginEmail" class="form-label mt-3 fw-semibold">Email</label>
-                            <input type="email" class="border-main rounded-3 form-control" id="loginEmail"
-                                placeholder="Masukkan Email">
-                            <label for="loginPass" class="form-label mt-3 fw-semibold">Password</label>
-                            <input type="password" id="loginPass" class="border-main rounded-3 form-control"
-                                placeholder="Masukkan Password" aria-describedby="passwordHelpBlock">
+                            <div>
+                                <label for="name" class="form-label fw-semibold">Nama Lengkap</label>
+                                <input type="text"
+                                    class="border-main rounded-3 form-control @error('name') is-invalid @enderror"
+                                    id="name" placeholder="Masukkan Email" name="name" autofocus>
+                                @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div>
+                                <label for="loginEmail" class="form-label mt-3 fw-semibold">Email</label>
+                                <input type="email"
+                                    class="border-main rounded-3 form-control @error('email') is-invalid @enderror"
+                                    id="loginEmail" placeholder="Masukkan Email" name="email">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="position-relative">
+                                <label for="loginPass" class="form-label mt-3 fw-semibold">Password</label>
+                                <input type="password" id="loginPass"
+                                    class="border-main rounded-3 form-control @error('password') is-invalid @enderror"
+                                    placeholder="Masukkan Password" aria-describedby="passwordHelpBlock" name="password">
 
-                            <button class="btn rounded-3 button-main w-100 text-white mt-5" type="button">Daftar</button>
+                                <span id="eye">
+                                    <iconify-icon icon="uiw:eye-o" id="icon" class="text-secondary"></iconify-icon>
+                                </span>
+
+                                @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <button class="btn rounded-3 button-main w-100 text-white mt-5" type="submit">Daftar</button>
                         </div>
                     </form>
 
@@ -63,3 +93,23 @@
         </div>
     </section>
 @endsection
+
+
+@push('js-libraries')
+    <script>
+        var password = document.getElementById('loginPass');
+        var eye = document.getElementById('eye');
+        var icon = document.getElementById('icon');
+
+
+        eye.addEventListener('click', () => {
+            if (password.type == 'password') {
+                password.type = 'text';
+                icon.setAttribute('icon', 'iconamoon:eye-off')
+            } else {
+                password.type = 'password';
+                icon.setAttribute('icon', 'uiw:eye-o')
+            }
+        })
+    </script>
+@endpush

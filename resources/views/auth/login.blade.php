@@ -7,23 +7,56 @@
             <div class="col-md-6">
                 <div class="header px-5">
                     <img src="{{ asset('assets/img/logo-main.png') }}" class="mt-3 mx-auto d-block " width="100px">
-                    <h1 class="fw-bold mx-5 mt-2 text-center" id="headerText"><span class="text-main">Selamat</span>
+                    <h1 class="fw-bold mx-5 mt-2 text-center mb-4" id="headerText"><span class="text-main">Selamat</span>
                         Datang</h1>
+                    @error('message')
+                        <div class="row row d-flex justify-content-center m-0">
+                            <div class="col-8">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Gagal!</strong> Email atau Password Anda Salah.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    @enderror
 
-                    <form action="" class="row d-flex justify-content-center mt-5">
+                    <form action="{{ route('login') }}" method="POST" class="row d-flex justify-content-center">
+                        @csrf
                         <div class="col-md-8">
-                            <label class="form-label fw-semibold">Email</label>
-                            <input type="email" class="border-main rounded-3 form-control" id="loginEmail"
-                                placeholder="Masukkan Email">
-                            <label class="form-label mt-3 fw-semibold">Password</label>
-                            <input type="password" id="loginPass" class="border-main rounded-3 form-control"
-                                placeholder="Masukkan Password" aria-describedby="passwordHelpBlock">
-                            <i class="bi bi-eye-slash" id="togglePassword"></i>
+                            <div>
+                                <label class="form-label fw-semibold">Email</label>
+                                <input type="email" name="email"
+                                    class="border-main rounded-3 form-control @error('email') is-invalid @enderror"
+                                    id="loginEmail" placeholder="Masukkan Email" autofocus>
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="position-relative">
+                                <label class="form-label mt-3 fw-semibold">Password</label>
+                                <input type="password" id="loginPass"
+                                    class="border-main rounded-3 form-control @error('password') is-invalid @enderror"
+                                    placeholder="Masukkan Password" name="password" aria-describedby="passwordHelpBlock">
+                                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                                <span id="eye" style="bottom: 0">
+                                    <iconify-icon icon="uiw:eye-o" id="icon" class="text-secondary"></iconify-icon>
+                                </span>
+
+                                @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                             <div class="text-end my-3">
                                 <a href="" class="text-main">Lupa password?</a>
                             </div>
 
-                            <button class="btn rounded-3 button-main w-100 text-white" type="button">Masuk</button>
+                            <button class="btn rounded-3 button-main w-100 text-white" type="submit">Masuk</button>
                         </div>
                     </form>
 
@@ -64,3 +97,23 @@
         </div>
     </section>
 @endsection
+
+
+@push('js-libraries')
+    <script>
+        var password = document.getElementById('loginPass');
+        var eye = document.getElementById('eye');
+        var icon = document.getElementById('icon');
+
+
+        eye.addEventListener('click', () => {
+            if (password.type == 'password') {
+                password.type = 'text';
+                icon.setAttribute('icon', 'iconamoon:eye-off')
+            } else {
+                password.type = 'password';
+                icon.setAttribute('icon', 'uiw:eye-o')
+            }
+        })
+    </script>
+@endpush

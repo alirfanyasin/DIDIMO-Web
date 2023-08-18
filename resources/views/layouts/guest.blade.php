@@ -17,6 +17,8 @@
     {{-- Slick Slider --}}
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     {{-- CSS Landing Page --}}
     <link rel="stylesheet" href="/assets/css/landing.css" />
     <link rel="stylesheet" href="/assets/css/artikel.css" />
@@ -40,7 +42,8 @@
     </script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.slick-slider').slick({
@@ -77,6 +80,8 @@
             });
         });
     </script>
+
+    @stack('js-libraries')
 </body>
 
 </html>

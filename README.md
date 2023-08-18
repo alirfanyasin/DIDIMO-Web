@@ -31,9 +31,9 @@ npm run dev
 ```
 
 ## Usage
-Demo akun
-Email    : admin@didimo.test
-Password : password
+Demo akun <br/>
+Email    : admin@didimo.test <br/>
+Password : password <br/><br/>
 
-Email    : user@didimo.test
+Email    : user@didimo.test <br/>
 Password : password

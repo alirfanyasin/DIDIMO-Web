@@ -15,7 +15,7 @@
                     <a class="nav-link mx-2" href="#tentang-kami-section">Tentang Kami</a>
                     <a class="nav-link mx-2" href="#layanan-section">Layanan</a>
                     <a class="nav-link mx-2 {{ Request::is('artikel') ? 'active' : '' }}"
-                        href="#artikel-section">Artikel</a>
+                        href="{{ route('artikel') }}">Artikel</a>
                     <a class="nav-link mx-2" href="#testimonial-section">Testimonial</a>
                     <a class="nav-link mx-2 btn btn-primary px-3" href="{{ route('login') }}">Masuk</a>
                 </div>

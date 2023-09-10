@@ -4,11 +4,15 @@ use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\KonsultasiController as AdminKonsultasiController;
 use App\Http\Controllers\Admin\PasienController as AdminPasienController;
+use App\Http\Controllers\API\Mail\ForgotPasswordController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\Auth\ForgotPassword;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\PeriksaController;
+use App\Http\Controllers\User\RiwayatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,10 +39,14 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login');
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::Post('/register', [RegisterController::class, 'register'])->name('register');
+    Route::get('/forgot-password', [ForgotPassword::class, 'index'])->name('forgot_password');
+
+    Route::post('/send-email-forgot-password', [ForgotPasswordController::class, 'index'])->name('send_email.forgot_password');
+    Route::get('/update-password/{any}', [ForgotPasswordController::class, 'update_password']);
 });
 
 
-// Logout
+// Logoutt
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route Dashboard 
@@ -54,8 +62,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::prefix('app')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::get('/user', function () {
-            return "<h1>Ini halaman user</h1>";
-        });
+        Route::get('/checkup', [PeriksaController::class, 'step_checkup']);
+        Route::post('/checkup/start', [PeriksaController::class, 'start']);
+        Route::get('/checkup/index', [PeriksaController::class, 'index']);
+        Route::post('/checkup/cancel/{id}', [PeriksaController::class, 'cancel']);
+        Route::post('/checkup/reset/{id}', [PeriksaController::class, 'reset']);
+        Route::get('/history', [RiwayatController::class, 'index']);
     });
 });

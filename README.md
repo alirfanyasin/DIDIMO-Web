@@ -20,6 +20,15 @@ Setelah itu lakukan generate key
 php artisan key:generate
 ```
 
+Jalankan migration dan seeder
+```sh
+php artisan migrate
+
+php artisan db:seed
+
+php artisan migrate:fresh --seed
+```
+
 ## Running Project
 ```sh
 php artisan serve

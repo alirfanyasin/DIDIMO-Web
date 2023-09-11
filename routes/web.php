@@ -47,6 +47,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index']);
         Route::get('/pasien', [AdminPasienController::class, 'index']);
         Route::get('/artikel', [AdminArtikelController::class, 'index']);
+        Route::post('artikel/store', [AdminArtikelController::class, 'store'])->name('artikel.store');
+        Route::get('artikel/{id}/delete', [AdminArtikelController::class, 'destroy'])->name('artikel.destroy');
+        Route::get('artikel/{id}/edit', [AdminArtikelController::class, 'edit'])->name('artikel.edit');
+        Route::put('artikel/{id}/update', [AdminArtikelController::class, 'update'])->name('artikel.update');
         Route::get('/konsultasi', [AdminKonsultasiController::class, 'index']);
     });
 });

@@ -44,8 +44,8 @@
     font-size: 20px;
     position: absolute;
     right: 10px;
-    bottom: 8px;
-    cursor: pointer;
+    bottom: 0px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 668px){

@@ -128,18 +128,11 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- FIX ERROR TEXTAREA/EDIT MODALS-->
-                <!-- HECKA GANTENG :) -->
                 <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" aria-labelledby="labelEdit{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Update Barang</h5>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <h5 class="modal-title"><b>Update Barang</b></h5>
                             </div>
                             <div class="modal-body">
                                 <!--FORM UPDATE BARANG-->
@@ -147,18 +140,21 @@
                                     @csrf
                                     @method('put')
                                     <div class="form-group">
-                                        <label for="updateJudul">Judul</label>
+                                        <label for="updateJudul"><b>Judul</b></label>
                                         <input type="text" class="form-control border border-danger" id="updateJudul" name="updateJudul" value="{{ $item->judul }}">
-                                        <label for="updateKategori">Kategori</label>
+                                        <label for="updateKategori" class="mt-2"><b>Kategori</b></label>
                                         <input type="text" class="form-control border border-danger" id="updateKategori" name="updateKategori" value="{{ $item->kategori }}">
-                                        <label for="updateImage">Image</label>
+                                        <label for="updateImage" class="mt-2"><b>Image</b></label>
                                         <input type="file" class="form-control border border-danger" id="updateImage" name="updateImage" value="{{ $item->image }}">
-                                        <label for="updateConten">Isi</label>
+                                        <label for="updateConten" class="mt-2"><b>Isi</b></label>
                                         <textarea class="form-control border border-danger" id="updateConten" name="updateConten">{{ $item->conten }}</textarea>
-                                        <button type="submit" class="btn btn-primary">Perbarui Data</button>
+                                        <button type="submit" class="mt-4 btn btn-primary" style="border: none;">Perbarui Data</button>
                                     </div>
                                 </form>
                                 <!--END FORM UPDATE BARANG-->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

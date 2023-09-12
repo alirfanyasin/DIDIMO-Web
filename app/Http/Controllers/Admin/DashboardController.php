@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charts\CheckupMonthlyChart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(CheckupMonthlyChart $checkupChart)
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard', [
+            'checkupChart' => $checkupChart->build()
+        ]);
     }
 }

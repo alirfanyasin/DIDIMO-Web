@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="text-end my-3">
-                                <a href="" class="text-main">Lupa password?</a>
+                                <a href={{ route('forgot_password') }} class="text-main">Lupa password?</a>
                             </div>
 
                             <button class="btn rounded-3 button-main w-100 text-white" type="submit">Masuk</button>

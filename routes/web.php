@@ -46,7 +46,7 @@ Route::middleware('guest')->group(function () {
 });
 
 
-// Logout
+// Logoutt
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route Dashboard 

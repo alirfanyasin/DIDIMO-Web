@@ -15,29 +15,24 @@ class DashboardController extends Controller
     {
         $number_of_inspection = Periksa::where('user_id', Auth::user()->id)->get();
         $last_check = Periksa::where('user_id', Auth::user()->id)->latest()->first();
-<<<<<<< HEAD
+
         // if ($last_check) {
         //     $current = new Carbon($last_check->created_at);
         //     $next_inspection = $current->addMonth()->format('d F Y');
         // } else {
         //     $next_inspection = now()->addMonth()->format('d F Y');
         // }
-=======
         if ($last_check) {
             $next_inspection = $last_check->date;
         } else {
             $next_inspection = 'Belum ada pemeriksaan';
         }
->>>>>>> 80644fc7f117a10bf4d766bfcc8c5a2f4e1e2ca9
 
         return view('user.dashboard', [
             'last_check' => $last_check,
             'number_of_inspection' => $number_of_inspection,
-<<<<<<< HEAD
             'next_inspection' => $last_check->date,
-=======
             'next_inspection' => $next_inspection,
->>>>>>> 80644fc7f117a10bf4d766bfcc8c5a2f4e1e2ca9
             'checkupChart' => $checkupChart->build()
         ]);
     }

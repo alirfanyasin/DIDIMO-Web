@@ -29,13 +29,19 @@
           <div class="card-body ">
             <h5 class="card-title text-center fw-bold">Periksa Terakhir</h5>
             <div class="row align-items-center justify-content-center">
-              <div class="col-6 text-end">
-                <h1 class="text-main fw-semibold">{{ date('d', strtotime($next_inspection)) }}</h1>
-              </div>
-              <div class="col-6">
-                <h5 class="fs-6 fw-semibold ms-0">
-                  {{ date('F', strtotime($next_inspection)) }}<br>{{ date('Y', strtotime($next_inspection)) }}</h5>
-              </div>
+              @if (isset($next_inspection))
+                <div class="col-6 text-end">
+                  <h1 class="text-main fw-semibold">{{ date('d', strtotime($next_inspection)) }}</h1>
+                </div>
+                <div class="col-6">
+                  <h5 class="fs-6 fw-semibold ms-0">
+                    {{ date('F', strtotime($next_inspection)) }}<br>{{ date('Y', strtotime($next_inspection)) }}</h5>
+                </div>
+              @else
+                <div class="col-12 text-center">
+                  {{ $next_inspection }}
+                </div>
+              @endif
             </div>
           </div>
         </div>

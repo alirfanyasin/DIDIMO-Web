@@ -55,6 +55,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index']);
         Route::get('/pasien', [AdminPasienController::class, 'index']);
         Route::get('/artikel', [AdminArtikelController::class, 'index']);
+        Route::get('/artikel/create', [AdminArtikelController::class, 'create'])->name('app.artikel.create');
         Route::get('/konsultasi', [AdminKonsultasiController::class, 'index']);
     });
 });

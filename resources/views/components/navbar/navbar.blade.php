@@ -25,19 +25,36 @@ bg-transparent @endguest">
     @role('admin')
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="me-auto"></div>
-        <div class="navbar-nav ml-auto">
+        <div class="navbar-nav ml-auto d-flex align-items-center">
           <a class="nav-link mx-2 {{ Request::is('app/admin/dashboard') ? 'active' : '' }}"
             href="/app/admin/dashboard">Dashboard</a>
           <a class="nav-link mx-2 {{ Request::is('app/admin/pasien') ? 'active' : '' }}"
             href="/app/admin/pasien">Pasien</a>
-          <a class="nav-link mx-2 {{ Request::is('app/admin/artikel') ? 'active' : '' }}"
+          <a class="nav-link mx-2 {{ Request::is('app/admin/artikel') ? 'active' : '' }} {{ Request::is('app/admin/artikel/*') ? 'active' : '' }}"
             href="/app/admin/artikel">Artikel</a>
           <a class="nav-link mx-2 {{ Request::is('app/admin/konsultasi') ? 'active' : '' }}"
             href="/app/admin/konsultasi">Konsultasi</a>
-          <form action="{{ route('logout') }}" method="POST" class="d-inline">
-            @csrf
-            <button type="submit" class="nav-link mx-2 btn btn-primary px-3">Keluar</button>
-          </form>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <div style="width: 40px; height: 40px;" class="border rounded-circle overflow-hidden p-1">
+                <img src="{{ asset('assets/img/photo-user.png') }}" alt="photo user" style="width: 100%;">
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Akun</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+                  @csrf
+                  <button type="submit" class="border-0 bg-white text-danger">Keluar</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+
         </div>
       </div>
     @endrole
@@ -45,17 +62,34 @@ bg-transparent @endguest">
     @role('user')
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="me-auto"></div>
-        <div class="navbar-nav ml-auto">
+        <div class="navbar-nav ml-auto d-flex align-items-center">
           <a class="nav-link mx-2 {{ Request::is('app/dashboard') ? 'active' : '' }}" href="/app/dashboard">Dashboard</a>
           <a class="nav-link mx-2 {{ Request::is('app/checkup') ? 'active' : '' }} {{ Request::is('app/checkup/*') ? 'active' : '' }}"
             href="/app/checkup">Periksa</a>
           <a class="nav-link mx-2 {{ Request::is('app/konsultasi') ? 'active' : '' }}"
             href="/app/konsultasi">Konsultasi</a>
           <a class="nav-link mx-2  {{ Request::is('app/history') ? 'active' : '' }}" href="/app/history">Riwayat</a>
-          <form action="{{ route('logout') }}" method="POST" class="d-inline">
-            @csrf
-            <button type="submit" class="nav-link mx-2 btn btn-primary px-3">Keluar</button>
-          </form>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <div style="width: 40px; height: 40px;" class="border rounded-circle overflow-hidden p-1">
+                <img src="{{ asset('assets/img/photo-user.png') }}" alt="photo user" style="width: 100%;">
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Akun</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+                  @csrf
+                  <button type="submit" class="border-0 bg-white text-danger">Keluar</button>
+                </form>
+              </li>
+            </ul>
+          </li>
         </div>
       </div>
     @endrole

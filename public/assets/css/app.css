@@ -69,3 +69,9 @@ body {
 #text-green {
  color: #00bb40;
 }
+
+
+/* Dropdown Custom */
+.dropdown-toggle::after {
+  display: none;
+}

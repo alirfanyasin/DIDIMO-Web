@@ -5,7 +5,7 @@
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <style>
     #editor {
-      height: 200px;
+      height: 400px;
     }
   </style>
 @endpush
@@ -42,11 +42,14 @@
                 <div id="editor">
                 </div>
               </div>
+
+              <div>
+                <button type="submit" class="btn btn-primary border-0">Save Change</button>
+              </div>
             </div>
           </div>
         </div>
     </form>
-  </div>
   </div>
 
 @endsection

@@ -1,7 +1,7 @@
 # DIDIMO WEBSITE
 
 ## Instalation
-Setelah di clone repositorynya silahkan tulis perintah dibawah ini
+Setelah di clone repositorynya silahkan tulis perintah dibawah ini.
 ```sh
 composer install
 ```

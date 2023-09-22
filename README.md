@@ -39,6 +39,12 @@ jika ingin menjalan kan vitenya
 npm run dev
 ```
 
+
+## Running Project with IoT
+```sh
+php artisan serve --host=ip_address
+```
+
 ## Usage
 Demo akun <br/><br/>
 Email    : admin@didimo.test <br/>

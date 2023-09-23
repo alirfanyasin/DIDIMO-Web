@@ -43,10 +43,10 @@ class ArtikelController extends Controller
     {
 
         $validatedData = $request->validate([
-            'judul' => 'required|string',
-            'kategori' => 'required|string',
-            'conten' => 'required|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Ubah jenis dan ukuran sesuai kebutuhan
+            'judul' => 'string',
+            'kategori' => 'string',
+            'conten' => 'string',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         if ($request->hasFile('image')) {
@@ -57,9 +57,15 @@ class ArtikelController extends Controller
             $validatedData['image'] = $name_file;
         };
 
+        if (strpos($validatedData['conten'], '<img') !== false) {
+            $contenWithImages = $this->processImagesInConten($validatedData['conten']);
+            $validatedData['conten'] = $contenWithImages;
+        }
+
         Artikel::create($validatedData);
 
-        return redirect('app/admin/artikel')->with('success', 'New artikel created successfully');
+        session()->flash('success', 'New artikel created successfully');
+        return redirect('/app/admin/artikel');
     }
 
     /**
@@ -122,5 +128,38 @@ class ArtikelController extends Controller
         Artikel::destroy($id);
 
         return redirect('app/admin/artikel')->with('delete', 'Artikel deleted successfully');
+    }
+
+    public function processImagesInConten($conten)
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML($conten);
+
+        // Cari gambar
+        $images = $dom->getElementsByTagName('img');
+
+        foreach ($images as $image) {
+            $imageSrc = $image->getAttribute('src');
+
+            if (strpos($imageSrc, 'data:image') !== false) {
+                // Decode gambar
+                list($type, $data) = explode(';', $imageSrc);
+                list(, $data) = explode(',', $data);
+                $data = base64_decode($data);
+
+                $randomString = Str::random(5);
+                $imageName = $randomString . '_' . time() . '.png';
+                $imagePath = storage_path('app/public/image/conten/' . $imageName);
+                file_put_contents($imagePath, $data);
+
+                // Ganti "src" dengan URL gambar yang disimpan
+                $image->setAttribute('src', asset('image/conten/' . $imageName));
+            }
+        }
+
+        // Uncode gambar ke HTML string
+        $contenWithImages = $dom->saveHTML();
+
+        return $contenWithImages;
     }
 }

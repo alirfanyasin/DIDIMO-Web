@@ -2,13 +2,22 @@
 @section('title', 'Periksa gula darah dan detak jantung')
 
 @section('content')
+  <script>
+    // Realtime Asyncrhonos
+    $(document).ready(function() {
+      setInterval(() => {
+        $('#result').load("{{ url('app/checkup/count') }}")
+        console.log($('#result').html())
+      }, 500);
+    })
+  </script>
   <div class="container" id="periksa">
     <div class="row d-flex justify-content-center mt-5">
       <div class="col-md-4">
         <div class="card border-0 rounded-3">
           <div class="card-body py-4">
             <h4 class="fw-semibold text-center mb-4">Hasil Gula Darah</h4>
-            <h1 class="text-center fw-bold text-main" style="font-size: 70px">{{ $data->gula_darah }}</h1>
+            <h1 class="text-center fw-bold text-main" style="font-size: 70px" id="result">0</h1>
           </div>
         </div>
       </div>
@@ -16,7 +25,8 @@
         <div class="card border-0 rounded-3">
           <div class="card-body py-4">
             <h4 class="fw-semibold text-center mb-4">Hasil Detak Jantung</h4>
-            <h1 class="text-center fw-bold text-main" style="font-size: 70px">{{ $data->detak_jantung }}</h1>
+            <h1 class="text-center fw-bold text-main" style="font-size: 70px" id="">{{ $data->detak_jantung }}
+            </h1>
           </div>
         </div>
       </div>
@@ -50,3 +60,7 @@
 
   </div>
 @endsection
+
+
+@push('js-libraries')
+@endpush

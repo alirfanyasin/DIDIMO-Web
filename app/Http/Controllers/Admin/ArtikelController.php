@@ -18,13 +18,11 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        // return view('admin.artikel')->with([
-        //     'artikel' => Artikel::all()
-        // ]);
         return view(
             'admin.artikel',
-            // get isi table as $data
-            ["data" => Artikel::all()]
+            [
+                'data' => Artikel::all()
+            ]
         );
     }
 
@@ -73,10 +71,9 @@ class ArtikelController extends Controller
      */
     public function show(string $id)
     {
-        // return view('admin.artikel', [
-        //     'title' => 'Detail Product',
-        //     'data' => Product::find($id)
-        // ]);
+        return view('admin.artikel_show', [
+            'data' => Artikel::find($id)
+        ]);
     }
 
     /**
@@ -149,11 +146,11 @@ class ArtikelController extends Controller
 
                 $randomString = Str::random(5);
                 $imageName = $randomString . '_' . time() . '.png';
-                $imagePath = storage_path('app/public/image/conten/' . $imageName);
+                $imagePath = storage_path('app/public/image/content/' . $imageName);
                 file_put_contents($imagePath, $data);
 
                 // Ganti "src" dengan URL gambar yang disimpan
-                $image->setAttribute('src', asset('image/conten/' . $imageName));
+                $image->setAttribute('src', asset('storage/image/content/' . $imageName));
             }
         }
 

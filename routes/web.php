@@ -57,6 +57,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/artikel', [AdminArtikelController::class, 'index']);
         Route::get('/artikel/create', [AdminArtikelController::class, 'create'])->name('app.artikel.create');
         Route::post('artikel/store', [AdminArtikelController::class, 'store'])->name('artikel.store');
+        Route::get('artikel/{id}/show', [AdminArtikelController::class, 'show'])->name('app.admin.artikel.show');
         Route::get('artikel/{id}/delete', [AdminArtikelController::class, 'destroy'])->name('artikel.destroy');
         Route::get('artikel/{id}/edit', [AdminArtikelController::class, 'edit'])->name('artikel.edit');
         Route::put('artikel/{id}/update', [AdminArtikelController::class, 'update'])->name('artikel.update');
@@ -73,5 +74,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::post('/checkup/cancel/{id}', [PeriksaController::class, 'cancel']);
         Route::post('/checkup/reset/{id}', [PeriksaController::class, 'reset']);
         Route::get('/history', [RiwayatController::class, 'index']);
+
+        Route::get('/checkup/count', [PeriksaController::class, 'count']);
     });
 });
+
+Route::get('/checkup/{gula_darah}', [PeriksaController::class, 'realtime']);

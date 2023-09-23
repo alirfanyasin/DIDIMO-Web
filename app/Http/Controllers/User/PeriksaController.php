@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPSTORM_META\type;
+
 class PeriksaController extends Controller
 {
 
@@ -48,5 +50,18 @@ class PeriksaController extends Controller
         $data = Periksa::findOrFail($id);
         $data->update(['gula_darah' => 0.00, 'detak_jantung' => 0.00]);
         return redirect('app/checkup/index');
+    }
+
+    public function count()
+    {
+        $data = Periksa::where('user_id', Auth::user()->id)->latest()->first();
+        return view('user.result_checkup', ['data' => $data]);
+    }
+
+
+    public function realtime($gula_darah)
+    {
+        // $id = (int) Auth::user()->id;
+        Periksa::where('user_id',  Auth::user()->id)->latest()->first()->update(['gula_darah' => $gula_darah]);
     }
 }

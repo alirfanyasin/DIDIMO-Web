@@ -17,7 +17,7 @@ class artikel extends Migration
             $table->string('judul', 255);
             $table->string('kategori', 255);
             $table->string('image', 255);
-            $table->string('conten', 255);
+            $table->longText('conten');
 
             $table->timestamps();
         });

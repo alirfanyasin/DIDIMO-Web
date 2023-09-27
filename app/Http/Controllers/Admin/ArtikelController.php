@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Artikel;
 use HasFactory;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use illuminate\Support\Str;
 
@@ -42,7 +43,7 @@ class ArtikelController extends Controller
 
         $validatedData = $request->validate([
             'judul' => 'string',
-            'kategori' => 'string',
+            'description' => 'string',
             'conten' => 'string',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
@@ -93,7 +94,7 @@ class ArtikelController extends Controller
     {
         // $validatedData = $request->validate([
         //     'judul' => 'required|string',
-        //     'kategori' => 'required|string',
+        //     'description' => 'required|string',
         //     'conten' => 'required|string',
         //     'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Ubah jenis dan ukuran sesuai kebutuhan
         // ]);
@@ -108,7 +109,7 @@ class ArtikelController extends Controller
 
         $data = Artikel::find($id);
         $data->judul = $request->updateJudul;
-        $data->kategori = $request->updateKategori;
+        $data->description = $request->updateDescription;
         $data->image = $request->updateImage;
         $data->conten = $request->updateConten;
         $data->save();
@@ -160,3 +161,17 @@ class ArtikelController extends Controller
         return $contenWithImages;
     }
 }
+
+    // public function storeImage($image)
+    // {
+    //     $randomString = Str::random(5);
+    //     $imageName = $randomString . '_' . time() . '.png';
+    //     $imagePath = storage_path('app/public/image/content/' . $imageName);
+
+    //     // Resize and store the image
+    //     $img = Image::make($image);
+    //     $img->resize(300, 200); // Atur ukuran yang diinginkan
+    //     $img->save($imagePath);
+
+    //     return $imageName;
+    // }

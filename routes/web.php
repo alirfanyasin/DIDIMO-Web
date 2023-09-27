@@ -40,7 +40,6 @@ Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::Post('/register', [RegisterController::class, 'register'])->name('register');
     Route::get('/forgot-password', [ForgotPassword::class, 'index'])->name('forgot_password');
-
     Route::post('/send-email-forgot-password', [ForgotPasswordController::class, 'index'])->name('send_email.forgot_password');
     Route::get('/update-password/{any}', [ForgotPasswordController::class, 'update_password']);
 });

@@ -33,11 +33,11 @@
               <input type="text" name="judul" id="title" class="form-control" required>
             </div>
             <div class="mb-3">
-              <label for="kategori">Description</label>
-              <textarea name="kategori" id="description" cols="30" rows="3" class="form-control" required></textarea>
+              <label for="description">Description</label>
+              <textarea name="description" id="description" cols="30" rows="3" class="form-control" required></textarea>
             </div>
             <div class="mb-3">
-              <label for="content">Content</label>
+              <label for="conten">Content</label>
               <!-- Create the editor container -->
               <div id="editor">
               </div>
@@ -51,6 +51,7 @@
           </div>
         </div>
       </div>
+    </div>
   </form>
 </div>
 

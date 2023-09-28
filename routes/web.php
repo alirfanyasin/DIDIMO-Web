@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\AkunController;
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\KonsultasiController as AdminKonsultasiController;
 use App\Http\Controllers\Admin\PasienController as AdminPasienController;
+use App\Http\Controllers\Admin\AkunController as AdminAkunController;
 use App\Http\Controllers\API\Mail\ForgotPasswordController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\ForgotPassword;
@@ -62,6 +64,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('artikel/{id}/edit', [AdminArtikelController::class, 'edit'])->name('artikel.edit');
         Route::put('artikel/{id}/update', [AdminArtikelController::class, 'update'])->name('artikel.update');
         Route::get('/konsultasi', [AdminKonsultasiController::class, 'index']);
+
+        Route::get('/akun', [AdminAkunController::class, 'index'])->name('app.admin.akun');
     });
 });
 

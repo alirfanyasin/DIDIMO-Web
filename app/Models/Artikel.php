@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     protected $guarded = 'id';
-    protected $fillable = ['judul', 'kategori', 'image', 'conten'];
+    protected $fillable = ['judul', 'description', 'image', 'conten'];
 }

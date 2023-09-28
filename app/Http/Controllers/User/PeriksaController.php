@@ -62,6 +62,6 @@ class PeriksaController extends Controller
     public function realtime($gula_darah)
     {
         // $id = (int) Auth::user()->id;
-        Periksa::where('user_id',  Auth::user()->id)->latest()->first()->update(['gula_darah' => $gula_darah]);
+        Periksa::where('user_id', 2)->latest()->first()->update(['gula_darah' => $gula_darah]);
     }
 }

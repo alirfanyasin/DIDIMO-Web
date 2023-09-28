@@ -31,8 +31,8 @@ class DashboardController extends Controller
         return view('user.dashboard', [
             'last_check' => $last_check,
             'number_of_inspection' => $number_of_inspection,
-            'next_inspection' => $last_check->date,
-            'next_inspection' => $next_inspection,
+            'next_inspection' => Carbon::now(),
+            'next_inspection' => Carbon::now(),
             'checkupChart' => $checkupChart->build()
         ]);
     }

@@ -19,7 +19,7 @@
           <div class="card-body">
             <label for="" class="mb-3">Thumbnail</label>
             <div class="mb-3">
-              <img src="{{ asset('assets/img/no-image.svg') }}" id="result" alt="" class="w-100" width="100%" height="400px">
+              <img src="{{ asset('assets/img/no-image.svg') }}" id="result" alt="" class="w-100" width="100%">
             </div>
             <input type="file" name="image" id="thumbnail" class="form-control" onchange="readFile(this)" required>
           </div>
@@ -33,11 +33,11 @@
               <input type="text" name="judul" id="title" class="form-control" required>
             </div>
             <div class="mb-3">
-              <label for="description">Description</label>
+              <label for="kategori">Description</label>
               <textarea name="description" id="description" cols="30" rows="3" class="form-control" required></textarea>
             </div>
             <div class="mb-3">
-              <label for="conten">Content</label>
+              <label for="content">Content</label>
               <!-- Create the editor container -->
               <div id="editor">
               </div>
@@ -47,11 +47,11 @@
             <div>
               <button type="submit" id="successBtn" class="btn btn-primary border-0">Save Change</button>
               <a href="/app/admin/artikel" type="submit" class="btn btn-secondary border-0">Back</a>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
   </form>
 </div>
 

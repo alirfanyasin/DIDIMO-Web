@@ -42,7 +42,7 @@ bg-transparent @endguest">
               </div>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Akun</a></li>
+              <li><a class="dropdown-item" href="{{ route('app.admin.akun') }}">Akun</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
